@@ -85,6 +85,7 @@ Label Root
 				Var: _imi
 				Var: _inn
 				Var: _p1
+				Param: _public1
 
 			}
 
@@ -134,6 +135,7 @@ Label Root
 			Var: entry1exit
 			Var: imi
 			Var: inn
+			Param: F1p
 
 		}
 
@@ -508,6 +510,7 @@ Var: W1 0 s + n n
 Var: entry1exit 0 s + n n
 Var: imi 0 s + n n
 Var: inn 0 s + n n
+Param: F1p 0 n + n n	0
 
 Object: Firm1 C	1
 Param: _ID1 0 n + n n	0
@@ -543,6 +546,7 @@ Var: _f1 1 n + n n	0
 Var: _imi 0 n + n n
 Var: _inn 0 n + n n
 Var: _p1 0 n + n n
+Param: _public1 0 n + n n	0
 
 Object: Cli C	1
 Param: _IDc 0 n + n n	0
@@ -1404,6 +1408,10 @@ _INIT_
 
 END_DESCRIPTION
 
+Parameter_F1p
+(no description available)
+END_DESCRIPTION
+
 Object_Firm1
 Capital-good firm object
 _INIT_
@@ -1606,6 +1614,10 @@ Variable__p1
 Price of good of firm in capital-good sector
 _INIT_
 
+END_DESCRIPTION
+
+Parameter__public1
+(no description available)
 END_DESCRIPTION
 
 Object_Cli

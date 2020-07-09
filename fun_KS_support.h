@@ -173,7 +173,7 @@ double scrap_vintage( object *vint )
 // add and configure entrant capital-good firm object(s) and required hooks 
 // in equations 'entry1exit' and 'initCountry'
 
-double entry_firm1( object *sector, int n, bool newInd )
+double entry_firm1( object *sector, int n, int np, bool newInd )
 {
 	double Atau, AtauMax, Btau, BtauMax, D10, NW1, NW10, RD0, c1, f1, p1, mult, 
 		   equity = 0;
@@ -217,7 +217,7 @@ double entry_firm1( object *sector, int n, bool newInd )
 	}
 	
 	// add entrant firms (end of period, don't try to sell)
-	for ( ; n > 0; --n )
+	for ( ; n > 0; --n, --np )
 	{
 		ID1 = INCRS( sector, "lastID1", 1 );	// new firm ID
 		
@@ -250,6 +250,7 @@ double entry_firm1( object *sector, int n, bool newInd )
 
 		// initialize variables
 		WRITES( firm, "_ID1", ID1 );
+		WRITES( firm, "_public1", np > 0 ? 1 : 0 );
 		WRITES( firm, "_t1ent", T );
 		
 		if ( newInd )

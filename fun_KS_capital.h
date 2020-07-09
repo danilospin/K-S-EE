@@ -63,7 +63,20 @@ CYCLE( cur, "Firm1" )
 {
 	v[4] = VS( cur, "_NW1" );					// current net wealth
 	
-	if ( v[4] < 0 || T >= VS( cur, "_t1ent" ) + n1 )// bankrupt or incumbent?
+	if ( VS( cur, "_public1" ) )				// public firms don't exit
+	{
+		if ( v[4] < 0 )							// provide more equity if needed
+		{
+			// new equity required
+			v[6] = NW10u + VS( cur, "_Deb1" ) - VS( cur, "_NW1" );
+			v[1] += v[6];						// accumulate "entry" equity cost
+			
+			WRITES( cur, "_Deb1", 0 );			// reset debt
+			INCRS( cur, "_NW1", v[6] );			// add new equity
+		}
+	}
+	else
+		if ( v[4] < 0 || T >= VS( cur, "_t1ent" ) + n1 )// bankrupt or incumbent?
 	{
 		for ( v[5] = j = 0; j < n1; ++j )
 			v[5] += VLS( cur, "_BC", j );		// n1 periods customer number
@@ -114,7 +127,7 @@ CYCLE_SAFE( cur, "Firm1" )
 V( "f1rescale" );								// redistribute exiting m.s.
 
 // replace exiting firms by entrants
-v[1] += entry_firm1( p, j, false );				// add entrant-firm objects
+v[1] += entry_firm1( p, j, 0, false );				// add entrant-firm objects
 
 INCRS( PARENT, "cEntry", v[1] );				// account equity cost of entry
 INCRS( PARENT, "cExit", v[2] );					// account exit credits

@@ -751,7 +751,7 @@ Var: V 0 s + n p
 Var: dw 0 s + n n
 Var: wReal 0 s + n n
 
-SIM_NUM 10
+SIM_NUM 1
 SEED 1
 MAX_STEP 300
 EQUATION fun_KS.cpp

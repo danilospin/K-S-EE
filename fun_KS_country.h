@@ -294,6 +294,7 @@ double mu1 = VS( cur1, "mu1" );					// mark-up in sector 1
 double mu20 = VS( cur2, "mu20" );				// initial mark-up in sector 2
 double w0min = VS( cur4, "w0min" );				// absolute/initial minimum wage
 int F1 = VS( cur1, "F1" );						// number of firms in sector 1
+int F1p = VS( cur1, "F1p" );					// number of public firms in sector 1
 int F2 = VS( cur2, "F2" );						// number of firms in sector 2
 int Ls0 = VS( cur4, "Ls0" );					// initial labor supply
 
@@ -321,7 +322,7 @@ DELETE( cur );
 cur = SEARCHS( cur2, "Firm2" );					// remove empty firm instance
 DELETE( cur );
 
-v[1] = entry_firm1( cur1, F1, true );			// add capital-good firms
+v[1] = entry_firm1( cur1, F1, F1p, true );			// add capital-good firms
 v[1] += entry_firm2( cur2, F2, true );			// add consumer-good firms
 
 WRITE( "cEntry", v[1] );						// save equity cost of entry
