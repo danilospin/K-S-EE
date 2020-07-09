@@ -1,0 +1,82 @@
+
+
+====================> NEW TCL SESSION
+
+(06/30/20 16:11:14)
+Command:
+FATAL ERROR
+Message:
+System Signal received: SIGSEGV (Segmentation violation)
+-----
+
+
+====================> NEW TCL SESSION
+
+(07/06/20 16:21:37)
+Command:
+if { [ string length $bah ] > 0 && ! [ fn_spaces "$bah" . ] } { set res $bah; set path [ file dirname $res ]; set res [ file tail $res ]; set last [ expr [ string last .lsd $res ] - 1 ]; set res [ string range $res 0 $last ]; set numpos [ expr [ string last _ $res ] + 1 ]; if { $numpos > 0 } { set choice [ expr [ string range $res $numpos end ] ]; set res [ string range $res 0 [ expr $numpos - 2 ] ] } { plog "
+Invalid file name for sequential set: $res
+"; set choice 0 } } { set choice 0 }
+Message:
+can't set "choice": variable must have integer value
+-----
+
+(07/06/20 16:23:06)
+Command:
+if { [ string length $bah ] > 0 && ! [ fn_spaces "$bah" . ] } { set res $bah; set path [ file dirname $res ]; set res [ file tail $res ]; set last [ expr [ string last .lsd $res ] - 1 ]; set res [ string range $res 0 $last ]; set numpos [ expr [ string last _ $res ] + 1 ]; if { $numpos > 0 } { set choice [ expr [ string range $res $numpos end ] ]; set res [ string range $res 0 [ expr $numpos - 2 ] ] } { plog "
+Invalid file name for sequential set: $res
+"; set choice 0 } } { set choice 0 }
+Message:
+can't set "choice": variable must have integer value
+-----
+
+(07/06/20 17:08:45)
+Command:
+FATAL ERROR
+Message:
+System Signal received: SIGSEGV (Segmentation violation)
+-----
+
+
+====================> NEW TCL SESSION
+
+(07/06/20 17:52:23)
+Command:
+FATAL ERROR
+Message:
+System Signal received: SIGSEGV (Segmentation violation)
+-----
+
+
+====================> NEW TCL SESSION
+
+(07/06/20 18:12:03)
+Command:
+if { [ string length $bah ] > 0 && ! [ fn_spaces "$bah" . ] } { set res $bah; set path [ file dirname $res ]; set res [ file tail $res ]; set last [ expr [ string last .lsd $res ] - 1 ]; set res [ string range $res 0 $last ]; set numpos [ expr [ string last _ $res ] + 1 ]; if { $numpos > 0 } { set choice [ expr [ string range $res $numpos end ] ]; set res [ string range $res 0 [ expr $numpos - 2 ] ] } { plog "
+Invalid file name for sequential set: $res
+"; set choice 0 } } { set choice 0 }
+Message:
+invalid bareword "SA"
+in expression "SA";
+should be "$SA" or "{SA}" or "SA(...)" or ...
+-----
+
+
+====================> NEW TCL SESSION
+
+(07/07/20 17:11:55)
+Command:
+FATAL ERROR
+Message:
+System Signal received: SIGSEGV (Segmentation violation)
+-----
+
+
+====================> NEW TCL SESSION
+
+(07/08/20 12:11:16)
+Command:
+FATAL ERROR
+Message:
+System Signal received: SIGSEGV (Segmentation violation)
+-----

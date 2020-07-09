@@ -1,0 +1,71 @@
+
+Warning: parallel mode is not supported under current configuration
+
+Processing configuration file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10.lsd ...
+
+Simulation 1 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 1 of 5 finished at t = 1000 (614.38 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_46.res.gz... Done
+
+Simulation 2 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 2 of 5 finished at t = 1000 (1194.04 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_47.res.gz... Done
+
+Simulation 3 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 3 of 5 finished at t = 1000 (1005.50 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_48.res.gz... Done
+
+Simulation 4 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 4 of 5 finished at t = 1000 (617.56 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_49.res.gz... Done
+
+Simulation 5 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 5 of 5 finished at t = 1000 (550.13 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_50.res.gz... Done
+
+Saving totals in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_10_46_50.tot.gz... Done
+
+Processing configuration file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_11.lsd ...
+
+Simulation 1 of 5 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 1 of 3 finished at t = 600 (71.63 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_11_31.res.gz... Done
+
+Simulation 2 of 3 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 2 of 3 finished at t = 600 (159.24 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_11_32.res.gz... Done
+
+Simulation 3 of 3 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 3 of 3 finished at t = 600 (70.88 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_11_33.res.gz... Done
+
+Saving totals in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_11_31_33.tot.gz... Done
+
+Processing configuration file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_12.lsd ...
+
+Simulation 1 of 3 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 1 of 3 finished at t = 600 (74.42 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_12_34.res.gz... Done
+
+Simulation 2 of 3 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 2 of 3 finished at t = 600 (98.39 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_12_35.res.gz... Done
+
+Simulation 3 of 3 running...
+ Optional statistics being computed in object 'Stats'
+Simulation 3 of 3 finished at t = 600 (129.04 sec.)
+Saving results in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_12_36.res.gz... Done
+
+Saving totals in file C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA_12_34_36.tot.gz... Done
+
+Finished processing C:\LSD\LSD-7.2-stable-2\Example\SantAnna\K+S-original\R\data\Benchmark1000_SA
