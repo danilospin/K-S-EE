@@ -22,13 +22,16 @@ double xi = VS( PARENT, "xi" );					// share of R&D for innovation
 // normalized workers on R&D of the firm
 double L1rdN = VL( "_L1rd", 1 ) * VS( LABSUPL2, "Ls0" ) / VLS( LABSUPL2, "Ls", 1 );
 
-// innovation process (success probability)
-v[1] = 1 - exp( - VS( PARENT, "zeta1" ) * xi * L1rdN );
+//////////////////////EXPERIMENT 1/////////////////////////////////
+//Add a public subsidy to R&D Spending. Addition of the variable L1rdSub 
+v[1] = 1 - exp( - VS( PARENT, "zeta1" ) * xi * L1rdN * (1+VS( PARENT, "L1rdSub")));
+// Extra subsidy: xi*(1+L1rdSub)*L1rdN - This is an extra cost of the government that needs to be considered as public deficit
 
 if ( bernoulli( v[1] ) )						// innovation succeeded?
 {
-	double x1inf = VS( PARENT, "x1inf" );		// lower beta inno. draw support 
-	double x1sup = VS( PARENT, "x1sup" );		// upper beta inno. draw support 
+// NOW AS PART OF EXPERIMENT 4, THE x1inf and x1sup will depend on the National Research Lab 
+	double x1inf = VLS( PARENT, "x1infNRL",1 );		// lower beta inno. draw support 
+	double x1sup = VLS( PARENT, "x1supNRL",1 );		// upper beta inno. draw support 
 	double alpha1 = VS( PARENT, "alpha1" );		// beta distrib. alpha parameter
 	double beta1 = VS( PARENT, "beta1" );		// beta distrib. beta parameter
 	
@@ -57,6 +60,14 @@ if ( bernoulli( v[4] ) )						// imitation succeeded?
 		{
 			v[6] = sqrt( pow( VLS( cur, "_Btau", 1 ) - Btau, 2 ) +
 						 pow( VLS( cur, "_Atau", 1 ) - CURRENT, 2 ) );
+						 
+						 /////////////  EXPERIMENT 3 ///////////////////////////
+//PUBLIC FIRMS EXPANDING TECHNOLOGICAL DISTANCE
+// Public firm can expand the technological distance to allow for immitation. However this does not change the final result.
+			if (V("_public1")==1) 
+						v[6]=(1+VS(PARENT, "pubTechDist"))*sqrt( pow( VLS( cur, "_Btau", 1 ) - Btau, 2 ) + pow( VLS( cur, "_Atau", 1 ) - CURRENT, 2 ) );
+///////////////////////////////////////////////////////		
+
 			v[5] += imiProb[ i++ ] = ( v[6] > 0 ) ? 1 / v[6] : 0;
 		}
 
@@ -245,6 +256,11 @@ EQUATION( "_RD" )
 R&D expenditure of firm in capital-good sector
 */
 
+///////////////////EXPERIMENT 3////////////////////////////////////////////////
+//The private firms follow the same rules as in the previous version, the public will invest as top invester (see equation maxRD in capital.h)
+
+if (V("_public1")==0) {  
+
 v[1] = VL( "_S1", 1 );							// sales in previous period
 v[2] = VS( PARENT, "nu" );						// R&D share of sales
 
@@ -253,7 +269,7 @@ if ( v[1] > 0 )
 else											// no sales
 	// keep current expenditure or a share of available cash
 	v[0] = CURRENT;
-	
+	}
 RESULT( v[0] )
 
 

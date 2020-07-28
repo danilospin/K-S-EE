@@ -136,6 +136,17 @@ Label Root
 			Var: imi
 			Var: inn
 			Param: F1p
+			Param: L1rdSub
+			Param: x1inf_ES
+			Var: x1infNRL
+			Var: x1supNRL
+			Param: x1sup_ES
+			Var: maxRD
+			Var: RD_ES
+			Param: zeta_ES
+			Param: alpha1_ES
+			Param: beta1_ES
+			Param: xi_ES
 
 		}
 
@@ -291,6 +302,7 @@ Label Root
 			Var: l2avg
 			Var: oldVint
 			Var: p2avg
+			Param: invSub
 
 		}
 
@@ -511,6 +523,17 @@ Var: entry1exit 0 s + n n
 Var: imi 0 s + n n
 Var: inn 0 s + n n
 Param: F1p 0 n + n n	0
+Param: L1rdSub 0 n + n n	0
+Param: x1inf_ES 0 n + n n	-0.15
+Var: x1infNRL 0 n + n n
+Var: x1supNRL 0 n + n n
+Param: x1sup_ES 0 n + n n	0.15
+Var: maxRD 0 n + n n
+Var: RD_ES 0 n + n n
+Param: zeta_ES 0 n + n n	0
+Param: alpha1_ES 0 n + n n	3
+Param: beta1_ES 0 n + n n	2
+Param: xi_ES 0 n + n n	0.5
 
 Object: Firm1 C	1
 Param: _ID1 0 n + n n	0
@@ -627,6 +650,7 @@ Var: entry2exit 0 s + n p
 Var: l2avg 1 s + n n	0
 Var: oldVint 1 n + n n	1
 Var: p2avg 0 s + n n
+Param: invSub 0 n + n n	0
 
 Object: Firm2 C	1
 Param: _ID2 0 n + n n	0
@@ -1410,6 +1434,74 @@ END_DESCRIPTION
 
 Parameter_F1p
 (no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_L1rdSub
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_x1inf_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_x1infNRL
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_x1supNRL
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_x1sup_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_maxRD
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_RD_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_zeta_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_alpha1_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_beta1_ES
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_xi_ES
+(no description available)
+_INIT_
+
 END_DESCRIPTION
 
 Object_Firm1
@@ -1618,6 +1710,8 @@ END_DESCRIPTION
 
 Parameter__public1
 (no description available)
+_INIT_
+
 END_DESCRIPTION
 
 Object_Cli
@@ -2121,6 +2215,12 @@ END_DESCRIPTION
 Variable_p2avg
 Weighted average price charged in consumption-good sector
 Weighted by effective production
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_invSub
+(no description available)
 _INIT_
 
 END_DESCRIPTION

@@ -137,27 +137,6 @@ INIT_TSEARCHT( "Firm1", i );					// prepare turbo search indexing
 
 RESULT( ( double ) j / F1 )
 
-//////////////////////////// EXPERIMENT 3////////////////////////////////
-// calculate the maximun R&D done by private firms each round. The public firm will match the same R&D as the private firm with higher R&D
-// Firms that have the maximun investment in RD. This will be used by the public firm.
-// Control this by setting the number of public firms f1p to zero.
-EQUATION ("maxRD")
-v[0]=0;
-CYCLE( cur, "Firm1" )
-{
-		if (v[0]<VS( cur, "_RD" ))
-		v[0]=VS( cur, "_RD" );
-}
-CYCLE( cur, "Firm1" )
-{
-	if( VS( cur, "_public1" ) )
-	WRITES(cur, "_RD", v[0] ); //Public Firm invest in R&D as the top invester
-}
-v[1]=v[0];
-v[0]=0;
-RESULT( v[1] )
-//////////////////////////////////////////////////////////////////////////
-
 
 /*============================ SUPPORT EQUATIONS =============================*/
 
@@ -332,36 +311,6 @@ else
 
 RESULT( v[0] )
 
-/////////// EXPERIMENT 4: NATIONAL RESEARCH LAB ////////////////////
-EQUATION( "RD_ES" ) //R&D used for radical innovations.
-v[0]= V("xi_ES"); // xi parameter for the NRL 
-v[1]= VS( PARENT, "GDP" ); //GDP
-v[2]=v[0]*v[1]; // Invest part of the GDP in the NRL
-RESULT(v[2])
-
-EQUATION( "x1infNRL" ) //radical innovation - increase technological opportunities (also updates x1supNRL)
-
-v[0] = V("RD_ES"); 
-v[1] = 1 - exp( - V("zeta_ES") * v[0] ); //Zeta_ES is the Zeta for radical innovations. v[1] is the bernoulli parameter
-
-if ( bernoulli( v[1] )==1 )						// radical innovation succeeded?
-{
-	double alpha1_ES = V("alpha1_ES");	// beta distrib. alpha parameter for radical innovations
-	double beta1_ES = V("beta1_ES");		// beta distrib. beta parameter for radical innovations
-	double x1inf_ES = V("x1inf_ES");		// lower beta inno. draw support for radical innovations
-	double x1sup_ES = V("x1sup_ES");		// upper beta inno. draw support for radical innovations
-	
-	v[2]=beta(alpha1_ES, beta1_ES ); // Parameter of Technological Opportunities
-	v[3]= x1inf_ES + v[2] * ( x1sup_ES - x1inf_ES  ); //New value for Technological Opportunities
-}
- 	
- 	 double x1supNRL = V("x1supNRL");
- 	v[4]= CURRENT + (v[3]/2); 
- 	v[5]= x1supNRL + (v[3]/2); 
- 	WRITE("x1supNRL", v[5] );
-RESULT( v[4] )
-
-EQUATION_DUMMY( "x1supNRL", "" )
 
 /*============================= DUMMY EQUATIONS ==============================*/
 

@@ -11,12 +11,12 @@
 #******************************************************************
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwg("C:/LSD/LSD-7.2-stable-2/Example/SantAnna/K+S-original/R/data")
+
 getwd()
 
 
 folder   <- "data"                    # data files folder
-baseName <- "Benchmark1000_NWmed_high"                     # data files base name (same as .lsd file)
+baseName <- "Benchmark_test"                     # data files base name (same as .lsd file)
 nExp <- 1                            # number of experiments
 iniDrop <- 0                          # initial time steps to drop from analysis (0=none)
 nKeep <- -1                           # number of time steps to keep (-1=all)
